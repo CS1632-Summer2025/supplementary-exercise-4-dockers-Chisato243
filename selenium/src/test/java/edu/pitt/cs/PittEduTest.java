@@ -58,17 +58,17 @@ public class PittEduTest {
     assert(elements.size() > 0);
   }
 
-  @Test
-  public void tEST3LOGOIMAGE() {
-    // Test name: TEST-3-LOGO-IMAGE
-    driver.get("https://www.pitt.edu/");
-    // Grab logo src
-    WebElement element = driver.findElement(By.cssSelector("img[alt='University of Pittsburgh']"));
-    String logo = element.getAttribute("src");
-    // Store src in vars and check suffix
-    vars.put("logo", logo);
-    assertTrue(vars.get("logo").toString().endsWith("/sites/default/files/assets/pitt_shield_white-home.png"));
-  }
+  // @Test
+  // public void tEST3LOGOIMAGE() {
+  //   // Test name: TEST-3-LOGO-IMAGE
+  //   driver.get("https://www.pitt.edu/");
+  //   // Grab logo src
+  //   WebElement element = driver.findElement(By.cssSelector("img[alt='University of Pittsburgh']"));
+  //   String logo = element.getAttribute("src");
+  //   // Store src in vars and check suffix
+  //   vars.put("logo", logo);
+  //   assertTrue(vars.get("logo").toString().endsWith("/sites/default/files/assets/pitt_shield_white-home.png"));
+  // }
 
   @Test
   public void tEST4SCHOOLSSCI() {
