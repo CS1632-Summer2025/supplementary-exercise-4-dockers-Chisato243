@@ -10,7 +10,8 @@ import static org.hamcrest.CoreMatchers.is;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -26,15 +27,17 @@ public class PittEduTest {
 
   @Before
   public void setUp() {
-     driver = new FirefoxDriver();
-    js = (JavascriptExecutor) driver;
-    vars = new HashMap<>();
-    driver.manage().window().setSize(new Dimension(1200, 800));
-  }
-
+    ChromeOptions options = new ChromeOptions();
+    options.addArguments("--headless=new");
+    options.addArguments("--no-sandbox");
+    options.addArguments("--disable-dev-shm-usage");
+    driver = new ChromeDriver(options);
+}
   @After
   public void tearDown() {
-    driver.quit();
+      if (driver != null) {
+          driver.quit();
+      }
   }
 
   @Test
